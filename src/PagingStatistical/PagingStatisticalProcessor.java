@@ -12,6 +12,12 @@ public class PagingStatisticalProcessor {
         super();
     }
 
+    /**
+     * Constructor for PagingStatisticalProcessor class.
+     * @param physicalMemorySize The size of the physical memory.
+     * @param pageSize The size of the page.
+     * @param pageOffsetNumOfBits The number of bits in the page offset.
+     */
     public PagingStatisticalProcessor(long physicalMemorySize, long pageSize, int pageOffsetNumOfBits) {
         super();
         this.physicalMemorySize = physicalMemorySize;
@@ -19,6 +25,9 @@ public class PagingStatisticalProcessor {
         this.pageOffsetNumOfBits = pageOffsetNumOfBits;
     }
 
+    /**
+     * Prints statistical information about multi-paging.
+     */
     public void PrintStatisticalInformation() {
 
         //  formula to calculate total number of frames =  physicalMemorySize / pageSize
@@ -47,6 +56,10 @@ public class PagingStatisticalProcessor {
 
     }
 
+    /**
+     * Prints information about a program.
+     * @param programSizeInBytes The size of the program in bytes.
+     */
     public void PrintInformationAboutAProgram(long programSizeInBytes) {
 
         long numOfPages = physicalMemorySize / pageSize;
@@ -77,7 +90,10 @@ public class PagingStatisticalProcessor {
 
 
     
-
+    /**
+     * Prints information about a virtual address, including the page table indices for each level of paging.
+     * @param virtualAddress a string representing the virtual address to be analyzed
+     */
     public void PrintInformationAboutAVirtualAddress(String virtualAddress) {
      
         long numOfPages = physicalMemorySize / pageSize;
@@ -107,6 +123,3 @@ public class PagingStatisticalProcessor {
         }
     }
 }
-
-
-// 4294967296
